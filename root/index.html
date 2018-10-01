@@ -42,40 +42,43 @@
 
 </body>
 </html>
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Simple Map</title>
-	<meta name="viewport" content="initial-scale=1.0">
 	<meta charset="utf-8">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Intro to MapView - Create a 2D map</title>
 	<style>
-		/* Always set the map height explicitly to define the size of the div
-		* element that contains the map. */
-		#map {
-			height: 90%;
-		}
-		/* Optional: Makes the sample page fill the window. */
-		html, body {
-			height: 100%;
-			margin: 0;
+		html, body, #viewDiv {
 			padding: 0;
-			background-image: url(img/darkblue.jpg);
-		}
-
-		* {
-			box-sizing: border-box;
-		}
-
-		body {
 			margin: 0;
-			font-family: Arial, Helvetica, sans-serif;
-			text-align: center;
+			height: 100%;
+			width: 100%;
 		}
 	</style>
+	<link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+	<script src="https://js.arcgis.com/4.8/"></script>
+	<script>
+		require([
+			"esri/Map",
+			"esri/views/MapView",
+			"dojo/domReady!"
+		], function (Map, MapView) {
+			var map = new Map({
+				basemap: "streets"
+			});
+			var view = new MapView({
+				container: "viewDiv",  // Reference to the scene div created in step 5
+				map: map,  // Reference to the map object created before the scene
+				zoom: 15.5,  // Sets zoom level based on level of detail (LOD)
+				center: [-86.7936, 33.4647],  // Sets center point of view using longitude,latitude
+				rotation: 29
+			});
+		});
+	</script>
 </head>
 <body>
+	<div id="viewDiv"></div>
 </body>
 </html>
