@@ -185,7 +185,7 @@
 </head>
 <body>
 	<div class="search-container">
-		<form autocomplete="off" id="searchform" action="http://samford-maps.azurewebsites.net/index.html">
+		<form autocomplete="off" id="searchform" action="http://samfordmaps.azurewebsites.net/index.html">
 			<div class="autocomplete" style="width:300px;">
 				<input id="searchbar" type="text" placeholder="Search.." name="search">
 			</div>
@@ -194,7 +194,7 @@
 	</div>
 
 	<script>
-		autocomplete(document.getElementById("searchbar"), names);
+        autocomplete(document.getElementById("searchbar"), names);
 	</script>
 
 	<div id="info">
@@ -211,7 +211,7 @@
 	<!--margin-left:500px;-->
 	<!--padding: 8px 16px; border - bottom: 1px solid black;"> ';-->
 	<script type="text/javascript">
-		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samford-maps.azurewebsites.net/index.html">';
+		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samfordmaps.azurewebsites.net/index.html">';
 		names.forEach(function (name) {
 			str += '<input type="submit" id="item" style="font-size:20px; background-color: white; border: 1px solid black; color: black; padding: 10px 24px; cursor: pointer; width: 100%; display: block;" value="' + name + '"/>';
 		});
