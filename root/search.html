@@ -5,60 +5,13 @@
 	<meta charset="utf-8" />
 	<title></title>
 	<link href="StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
 
-	<nav>
-		<p>About</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li>
-				<a href="#">Events</a>
-				<ul>
-					<li><a href="tours.html">Tours</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="upcoming.html">Upcoming</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Information</a>
-				<ul>
-					<li><a href="news.html">News</a></li>
-					<li><a href="safety.html">Safety</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Account</a>
-				<ul>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="login.html">Log In</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-
-</body>
-</html>
-
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Map</title>
 	<meta name="viewport" content="initial-scale=1.0">
-	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
 	<script src="Scripts.js"></script>
 	<style>
-		/* Always set the map height explicitly to define the size of the div
-		* element that contains the map. */
-		#map {
-			height: 90%;
-		}
 		/* Optional: Makes the sample page fill the window. */
 		html, body {
 			height: 100%;
@@ -184,8 +137,41 @@
 	</style>
 </head>
 <body>
+	<nav>
+		<p>Search</p>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="search.html">Search</a></li>
+			<li>
+				<a href="#">Events</a>
+				<ul>
+					<li><a href="tours.html">Tours</a></li>
+					<li><a href="games.html">Games</a></li>
+					<li><a href="upcoming.html">Upcoming</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Information</a>
+				<ul>
+					<li><a href="news.html">News</a></li>
+					<li><a href="safety.html">Safety</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Account</a>
+				<ul>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="settings.html">Settings</a></li>
+					<li><a href="login.html">Log In</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
 	<div class="search-container">
-		<form autocomplete="off" id="searchform" action="http://samfordmaps.azurewebsites.net/index.html">
+		<!--action="http://samfordmaps.azurewebsites.net/index.html"-->
+		<form autocomplete="off" id="searchform" onsubmit="store()" action="http://samfordmaps.azurewebsites.net/index.html">
 			<div class="autocomplete" style="width:300px;">
 				<input id="searchbar" type="text" placeholder="Search.." name="search">
 			</div>
@@ -193,8 +179,19 @@
 		</form>
 	</div>
 
+	<script type="text/javascript">
+		function store() {
+			var inputName = document.getElementById("searchbar");
+			//alert(inputName.value);
+			var inputCoords = ["-86.7936", "33.4647"] /****query to get coords*** */
+			prompt("Please copy and paste these into the target location box on the map screen, divided by commas : \n", inputCoords.join("\n"));
+			//alert("Please copy and paste these into the target location box on the map screen, divided by commas : \n" + inputCoords.join("\n"));
+			localStorage.setItem("searchbar", inputName.value);
+		}
+	</script>
+
 	<script>
-        autocomplete(document.getElementById("searchbar"), names);
+		autocomplete(document.getElementById("searchbar"), names);
 	</script>
 
 	<div id="info">

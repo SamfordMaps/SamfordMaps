@@ -3,60 +3,12 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
 	<meta charset="utf-8" />
-	<title></title>
-	<link href="StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-
-	<nav>
-		<p>About</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li>
-				<a href="#">Events</a>
-				<ul>
-					<li><a href="tours.html">Tours</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="upcoming.html">Upcoming</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Information</a>
-				<ul>
-					<li><a href="news.html">News</a></li>
-					<li><a href="safety.html">Safety</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Account</a>
-				<ul>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="login.html">Log In</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Map</title>
 	<meta name="viewport" content="initial-scale=1.0">
-	<meta charset="utf-8">
+	<link href="StyleSheet.css" rel="stylesheet" />
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
 	<style>
-		/* Always set the map height explicitly to define the size of the div
-		* element that contains the map. */
-		#map {
-			height: 90%;
-		}
 		/* Optional: Makes the sample page fill the window. */
 		html, body {
 			height: 100%;
@@ -141,8 +93,41 @@
 		}
 	</style>
 </head>
-<img src="img/tourspic.jpg" alt="Tours" width="70%" height="500">
 <body>
+	<nav>
+		<p>Tours</p>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="search.html">Search</a></li>
+			<li>
+				<a href="#">Events</a>
+				<ul>
+					<li><a href="tours.html">Tours</a></li>
+					<li><a href="games.html">Games</a></li>
+					<li><a href="upcoming.html">Upcoming</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Information</a>
+				<ul>
+					<li><a href="news.html">News</a></li>
+					<li><a href="safety.html">Safety</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Account</a>
+				<ul>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="settings.html">Settings</a></li>
+					<li><a href="login.html">Log In</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
+
+	<img src="img/tourspic.jpg" alt="Tours" width="70%" height="500">
+
 	<div style="text-align:center">
 		<h2 class="large-font" style="color:white">What tours do we have available?</h2>
 	</div>
@@ -154,7 +139,7 @@
 				<h1 class="xlarge-font" style="color:white"><b>Highlight Tour</b></h1>
 				<h1 class="large-font" style="color:red;"><b>September 5th - 10th</b></h1>
 				<p style="color:white"><span style="font-size:36px">What will you see?</span> Our Highlight Tour takes you to see all of the key places around our campus. If there's anywhere you just HAVE to see, this tour has them all.</p>
-				<button class="button" style="background-color:red">Sign Up</button>
+				<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Sign Up</button>
 			</div>
 			<div class="column-33">
 				<img src="/img/tourslibrary.jpg" width="335" height="471">
@@ -173,7 +158,7 @@
 				<h1 class="xlarge-font" style="color:darkblue"><b>Mini Tour</b></h1>
 				<h1 class="large-font" style="color:red;"><b>October 10th - 15th</b></h1>
 				<p><span style="font-size:24px">What will you see?</span> Our Mini Tour takes you on a smaller, more intimate tour, that consists of a mixture of sights from both the Highlight Tour and the Grand Tour. It's a perfect combination of the two.</p>
-				<button class="button" style="background-color:red">Sign Up</button>
+				<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Sign Up</button>
 			</div>
 		</div>
 	</div>
@@ -185,13 +170,12 @@
 				<h1 class="xlarge-font" style="color:white"><b>Grand Tour</b></h1>
 				<h1 class="large-font" style="color:red;"><b>November 15th - 20th</b></h1>
 				<p style="color:white"><span style="font-size:36px">What will you see?</span> Our Grand Tour takes you EVERYWHERE. If it's on campus, you'll see it. This is the ultimate tour for true Samford fans.</p>
-				<button class="button" style="background-color:red">Sign Up</button>
+				<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Sign Up</button>
 			</div>
 			<div class="column-33">
 				<img src="/img/toursuniversitycenter.jpg" width="335" height="471">
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

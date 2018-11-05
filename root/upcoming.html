@@ -5,58 +5,11 @@
 	<meta charset="utf-8" />
 	<title></title>
 	<link href="StyleSheet.css" rel="stylesheet" />
-</head>
-<body>
-
-	<nav>
-		<p>About</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li>
-				<a href="#">Events</a>
-				<ul>
-					<li><a href="tours.html">Tours</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="upcoming.html">Upcoming</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Information</a>
-				<ul>
-					<li><a href="news.html">News</a></li>
-					<li><a href="safety.html">Safety</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Account</a>
-				<ul>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="login.html">Log In</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
-
-</body>
-</html>
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Simple Map</title>
 	<meta name="viewport" content="initial-scale=1.0">
-	<meta charset="utf-8">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
 	<style>
-		/* Always set the map height explicitly to define the size of the div
-		* element that contains the map. */
-		#map {
-			height: 90%;
-		}
 		/* Optional: Makes the sample page fill the window. */
 		html, body {
 			height: 100%;
@@ -141,57 +94,89 @@
 		}
 	</style>
 </head>
-<img src="img/upcomingpic.jpg" alt="Upcoming Events" width="70%" height="500">
 <body>
-	<div style="text-align:center">
-		<h2 class="large-font" style="color:white">What's coming up?</h2>
-	</div>
+	<nav>
+		<p>Upcoming</p>
+		<ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="search.html">Search</a></li>
+			<li>
+				<a href="#">Events</a>
+				<ul>
+					<li><a href="tours.html">Tours</a></li>
+					<li><a href="games.html">Games</a></li>
+					<li><a href="upcoming.html">Upcoming</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Information</a>
+				<ul>
+					<li><a href="news.html">News</a></li>
+					<li><a href="safety.html">Safety</a></li>
+					<li><a href="about.html">About</a></li>
+				</ul>
+			</li>
+			<li>
+				<a href="#">Account</a>
+				<ul>
+					<li><a href="profile.html">Profile</a></li>
+					<li><a href="settings.html">Settings</a></li>
+					<li><a href="login.html">Log In</a></li>
+				</ul>
+			</li>
+		</ul>
+	</nav>
 
-	<!-- The App Section -->
-	<div class="container">
-		<div class="row">
-			<div class="column-66">
-				<h1 class="xlarge-font" style="color:white"><b>August Skies</b></h1>
-				<h1 class="large-font" style="color:red;"><b>August 14th</b></h1>
-				<p style="color:white"><span style="font-size:36px">Reach for the stars</span> The planetarium is holding their popular show, August Skies, once again. You do not want to miss seeing the skies like you never have before!</p>
-				<button class="button" style="background-color:red">Find Out More</button>
-			</div>
-			<div class="column-33">
-				<img src="/img/upcomingplanetarium.jpg" width="335" height="471">
+	<img src="img/upcomingpic.jpg" alt="Upcoming Events" width="70%" height="500">
+
+		<div style="text-align:center">
+			<h2 class="large-font" style="color:white">What's coming up?</h2>
+		</div>
+
+		<!-- The App Section -->
+		<div class="container">
+			<div class="row">
+				<div class="column-66">
+					<h1 class="xlarge-font" style="color:white"><b>August Skies</b></h1>
+					<h1 class="large-font" style="color:red;"><b>August 14th</b></h1>
+					<p style="color:white"><span style="font-size:36px">Reach for the stars</span> The planetarium is holding their popular show, August Skies, once again. You do not want to miss seeing the skies like you never have before!</p>
+					<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Find Out More</button>
+				</div>
+				<div class="column-33">
+					<img src="/img/upcomingplanetarium.jpg" width="335" height="471">
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- Clarity Section -->
-	<div class="container" style="background-color:white">
-		<!--#f1f1f1-->
-		<div class="row">
-			<div class="column-33">
-				<img src="/img/upcomingfamilyweekend.jpg" alt="App" width="335" height="471">
-			</div>
-			<div class="column-66">
-				<h1 class="xlarge-font" style="color:darkblue"><b>Family Weekend</b></h1>
-				<h1 class="large-font" style="color:red;"><b>September 8th</b></h1>
-				<p><span style="font-size:24px">Quality Time</span> Families from all around the world will be coming home to Samford to spend a weekend full of exciting events that will bring us even closer in fellowship!</p>
-				<button class="button" style="background-color:red">Find Out More</button>
+		<!-- Clarity Section -->
+		<div class="container" style="background-color:white">
+			<!--#f1f1f1-->
+			<div class="row">
+				<div class="column-33">
+					<img src="/img/upcomingfamilyweekend.jpg" alt="App" width="335" height="471">
+				</div>
+				<div class="column-66">
+					<h1 class="xlarge-font" style="color:darkblue"><b>Family Weekend</b></h1>
+					<h1 class="large-font" style="color:red;"><b>September 8th</b></h1>
+					<p><span style="font-size:24px">Quality Time</span> Families from all around the world will be coming home to Samford to spend a weekend full of exciting events that will bring us even closer in fellowship!</p>
+					<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Find Out More</button>
+				</div>
 			</div>
 		</div>
-	</div>
 
-	<!-- The App Section -->
-	<div class="container">
-		<div class="row">
-			<div class="column-66">
-				<h1 class="xlarge-font" style="color:white"><b>Macbeth</b></h1>
-				<h1 class="large-font" style="color:red;"><b>November 3rd</b></h1>
-				<p style="color:white"><span style="font-size:36px">Witches Among Us</span> Lady Macbeth and the witches will be up to their usual sacrificial activities when the theatre performs the classic Shakespearean play, Macbeth.</p>
-				<button class="button" style="background-color:red">Find Out More</button>
-			</div>
-			<div class="column-33">
-				<img src="/img/upcomingplay.jpg" width="335" height="471">
+		<!-- The App Section -->
+		<div class="container">
+			<div class="row">
+				<div class="column-66">
+					<h1 class="xlarge-font" style="color:white"><b>Macbeth</b></h1>
+					<h1 class="large-font" style="color:red;"><b>November 3rd</b></h1>
+					<p style="color:white"><span style="font-size:36px">Witches Among Us</span> Lady Macbeth and the witches will be up to their usual sacrificial activities when the theatre performs the classic Shakespearean play, Macbeth.</p>
+					<button class="button" style="background-color:red" onclick="location.href='http://samfordmaps.azurewebsites.net/temp.html';">Find Out More</button>
+				</div>
+				<div class="column-33">
+					<img src="/img/upcomingplay.jpg" width="335" height="471">
+				</div>
 			</div>
 		</div>
-	</div>
-
-</body>
+	</body>
 </html>
