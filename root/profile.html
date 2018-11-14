@@ -2,65 +2,79 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8" />
-	<title></title>
-	<link href="StyleSheet.css" rel="stylesheet" />
-	<meta name="viewport" content="initial-scale=1.0">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
-	<style>
-		/* Optional: Makes the sample page fill the window. */
-		html, body {
-			height: 100%;
-			margin: 0;
-			padding: 0;
-			background-image: url(img/darkblue.jpg);
-		}
+    <meta charset="utf-8" />
+    <title></title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <meta name="viewport" content="initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-		* {
-			box-sizing: border-box;
-		}
+    <style>
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            background-image: url(img/darkblue.jpg);
+        }
 
-		body {
-			margin: 0;
-			font-family: Arial, Helvetica, sans-serif;
-			text-align: center;
-		}
-	</style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
-	<nav>
-		<p>Profile</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li>
-				<a href="#">Events</a>
-				<ul>
-					<li><a href="tours.html">Tours</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="upcoming.html">Upcoming</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Information</a>
-				<ul>
-					<li><a href="news.html">News</a></li>
-					<li><a href="safety.html">Safety</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Account</a>
-				<ul>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="login.html">Log In</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+    <nav class="navbar nav-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="current-page"> Profile</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="search.html">Search</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tours.html">Tours</a></li>
+                            <li><a href="games.html">Games</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="safety.html">Safety</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="settings.html">Settings</a></li>
+                            <li><a href="login.html">Log In</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 	<img src="/img/underconstruction.gif" width="65%" height="75%">
 </body>
 </html>

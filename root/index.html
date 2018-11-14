@@ -2,72 +2,89 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
-	<title>Intro to MapView - Create a 2D map</title>
-	<link href="StyleSheet.css" rel="stylesheet" />
-	<style>
-		html, body, #viewDiv {
-			padding: 0;
-			margin: 0;
-			height: 100%;
-			width: 100%;
-		}
-	</style>
-	<link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
-	<script src="https://js.arcgis.com/4.8/"></script>
-	<script>
-		require([
-			"esri/Map",
-			"esri/views/MapView",
-			"dojo/domReady!"
-		], function (Map, MapView) {
-			var map = new Map({
-				basemap: "streets"
-			});
-			var view = new MapView({
-				container: "viewDiv",  // Reference to the scene div created in step 5
-				map: map,  // Reference to the map object created before the scene
-				zoom: 15.5,  // Sets zoom level based on level of detail (LOD)
-				center: [-86.7936, 33.4647],  // Sets center point of view using longitude,latitude
-				rotation: 29
-			});
-		});
-	</script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Intro to MapView - Create a 2D map</title>
+    <link href="StyleSheet.css" rel="stylesheet" />
+    <style>
+        html, body, #viewDiv {
+            padding: 0;
+            margin: 0;
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+    <link rel="stylesheet" href="https://js.arcgis.com/4.8/esri/css/main.css">
+    <script src="https://js.arcgis.com/4.8/"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+    <script src="Scripts.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        require([
+            "esri/Map",
+            "esri/views/MapView",
+            "dojo/domReady!"
+        ], function (Map, MapView) {
+            var map = new Map({
+                basemap: "streets"
+            });
+            var view = new MapView({
+                container: "viewDiv",  // Reference to the scene div created in step 5
+                map: map,  // Reference to the map object created before the scene
+                zoom: 15.5,  // Sets zoom level based on level of detail (LOD)
+                center: [-86.7936, 33.4647],  // Sets center point of view using longitude,latitude
+                rotation: 29
+            });
+        });
+    </script>
 </head>
 <body>
 
-	<nav>
-		<p>Map</p>
-		<ul>
-			<li><a href="index.html">Home</a></li>
-			<li><a href="search.html">Search</a></li>
-			<li>
-				<a href="#">Events</a>
-				<ul>
-					<li><a href="tours.html">Tours</a></li>
-					<li><a href="games.html">Games</a></li>
-					<li><a href="upcoming.html">Upcoming</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Information</a>
-				<ul>
-					<li><a href="news.html">News</a></li>
-					<li><a href="safety.html">Safety</a></li>
-					<li><a href="about.html">About</a></li>
-				</ul>
-			</li>
-			<li>
-				<a href="#">Account</a>
-				<ul>
-					<li><a href="profile.html">Profile</a></li>
-					<li><a href="settings.html">Settings</a></li>
-					<li><a href="login.html">Log In</a></li>
-				</ul>
-			</li>
-		</ul>
-	</nav>
+    <nav class="navbar nav-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" id="current-page"> Home</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">Home</a></li>
+                    <li class="active"><a href="search.html">Search</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tours.html">Tours</a></li>
+                            <li><a href="games.html">Games</a></li>
+                            <li><a href="upcoming.html">Upcoming</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="news.html">News</a></li>
+                            <li><a href="safety.html">Safety</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="profile.html">Profile</a></li>
+                            <li><a href="settings.html">Settings</a></li>
+                            <li><a href="login.html">Log In</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
 	<div id="viewDiv"></div>
 </body>
