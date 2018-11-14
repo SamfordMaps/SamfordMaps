@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -23,45 +23,45 @@
 
 	<script src="https://js.arcgis.com/3.26/"></script>
 	<script>
-      require([
-        "esri/urlUtils", "esri/map", "esri/dijit/Directions",
-        "dojo/parser",
-        "dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!"
-      ], function(
-        urlUtils, Map, Directions,
-        parser
-      ) {
-        parser.parse();
-        //all requests to route.arcgis.com will proxy to the proxyUrl defined in this object.
-        urlUtils.addProxyRule({
-          urlPrefix: "route.arcgis.com",
-          proxyUrl: "/sproxy/"
-        });
-        urlUtils.addProxyRule({
-          urlPrefix: "traffic.arcgis.com",
-          proxyUrl: "/sproxy/"
-        });
+		require([
+			"esri/urlUtils", "esri/map", "esri/dijit/Directions",
+			"dojo/parser",
+			"dijit/layout/BorderContainer", "dijit/layout/ContentPane", "dojo/domReady!"
+		], function (
+			urlUtils, Map, Directions,
+			parser
+		) {
+				parser.parse();
+				//all requests to route.arcgis.com will proxy to the proxyUrl defined in this object.
+				urlUtils.addProxyRule({
+					urlPrefix: "route.arcgis.com",
+					proxyUrl: "/sproxy/"
+				});
+				urlUtils.addProxyRule({
+					urlPrefix: "traffic.arcgis.com",
+					proxyUrl: "/sproxy/"
+				});
 
-        var map = new Map("map", {
-			basemap: "streets",
-			center: [-86.7936, 33.4647], // lon, lat
-			zoom: 17
-        });
+				var map = new Map("map", {
+					basemap: "streets",
+					center: [-86.7936, 33.4647], // lon, lat
+					zoom: 17
+				});
 
-        //default will point to ArcGIS world routing service
-        var directions = new Directions({
-          map: map
-          // --------------------------------------------------------------------
-          // New constuctor option and property showSaveButton added at version
-          // 3.17 to allow saving route. For more information see the API Reference.
-          // https://developers.arcgis.com/javascript/3/jsapi/directions-amd.html#showsavebutton
-          //
-          // Uncomment the line below to add the save button to the Directions widget
-          // --------------------------------------------------------------------
-          // , showSaveButton: true
-        },"dir");
-        directions.startup();
-      });
+				//default will point to ArcGIS world routing service
+				var directions = new Directions({
+					map: map
+					// --------------------------------------------------------------------
+					// New constuctor option and property showSaveButton added at version
+					// 3.17 to allow saving route. For more information see the API Reference.
+					// https://developers.arcgis.com/javascript/3/jsapi/directions-amd.html#showsavebutton
+					//
+					// Uncomment the line below to add the save button to the Directions widget
+					// --------------------------------------------------------------------
+					// , showSaveButton: true
+				}, "dir");
+				directions.startup();
+			});
 	</script>
 </head>
 <body class="claro">
