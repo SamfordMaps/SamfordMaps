@@ -2,145 +2,165 @@
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title></title>
-    <link href="StyleSheet.css" rel="stylesheet" />
+	<meta charset="utf-8" />
+	<title></title>
 
-    <meta name="viewport" content="initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
-    <script src="Scripts.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <!--><style>
-        /* Optional: Makes the sample page fill the window. */
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            background-image: url(img/darkblue.jpg);
-        }
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+	<script src="Scripts.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-        * {
-            box-sizing: border-box;
-        }
+	<!--Uses R360/Targomo and LeafletJS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--  Include leaflet javascript and css -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" crossorigin="">
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" crossorigin=""></script>
+	<!--  Include r360.js -->
+	<script src="https://releases.route360.net/r360-js/latest.js"></script>
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            text-align: center;
-        }
+	<!--<link href="StyleSheet.css" rel="stylesheet" />
 
-        input[type=text] {
-            padding: 6px;
-            margin-top: 8px;
-            font-size: 17px;
-            border: none;
-            width: 500px;
-        }
+	<meta name="viewport" content="initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+	<script src="Scripts.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>-->
+	<!--><style>
+		/* Optional: Makes the sample page fill the window. */
+		html, body {
+			height: 100%;
+			margin: 0;
+			padding: 0;
+			background-image: url(img/darkblue.jpg);
+		}
 
-        .search-container button {
-            text-align: center;
-            padding: 6px 10px;
-            margin-top: 8px;
-            margin-right: 16px;
-            background: #ddd;
-            font-size: 17px;
-            border: none;
-            cursor: pointer;
-        }
+		nav#dropdownbar.navbar.nav-inverse, div.container-fluid {
+			background-color: white;
+		}
 
-            .search-container button:hover {
-                background: #ccc;
-            }
+		* {
+			box-sizing: border-box;
+		}
 
-        @media screen and (max-width: 600px) {
-            .search-container {
-                float: none;
-            }
+		body {
+			margin: 0;
+			font-family: Arial, Helvetica, sans-serif;
+			text-align: center;
+		}
 
-                .input[type=text], .search-container button {
-                    float: none;
-                    display: block;
-                    text-align: left;
-                    width: 100%;
-                    margin: 0;
-                    padding: 14px;
-                }
+		input[type=text] {
+			padding: 6px;
+			margin-top: 8px;
+			font-size: 17px;
+			border: none;
+			width: 500px;
+		}
 
-            input[type=text] {
-                border: 1px solid #ccc;
-            }
-        }
+		.search-container button {
+			text-align: center;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-right: 25px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+		}
 
-        * {
-            box-sizing: border-box;
-        }
+			.search-container button:hover {
+				background: #ccc;
+			}
 
-        body {
-            font: 16px Arial;
-        }
+		@media screen and (max-width: 600px) {
+			.search-container {
+				float: none;
+			}
 
-        .autocomplete {
-            /*the container must be positioned relative:*/
-            position: relative;
-            display: inline-block;
-        }
+				.input[type=text], .search-container button {
+					float: none;
+					display: block;
+					text-align: left;
+					width: 100%;
+					margin: 0;
+					padding: 14px;
+				}
 
-        input {
-            border: 1px solid transparent;
-            background-color: #f1f1f1;
-            padding: 10px;
-            font-size: 16px;
-        }
+			input[type=text] {
+				border: 1px solid #ccc;
+			}
+		}
 
-            input[type=text] {
-                background-color: #f1f1f1;
-                width: 100%;
-            }
+		* {
+			box-sizing: border-box;
+		}
 
-            input[type=submit] {
-                background-color: DodgerBlue;
-                color: #fff;
-            }
+		body {
+			font: 16px Arial;
+		}
 
-        .autocomplete-items {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            border-bottom: none;
-            border-top: none;
-            z-index: 99;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
+		.autocomplete {
+			/*the container must be positioned relative:*/
+			position: relative;
+			display: inline-block;
+		}
 
-            .autocomplete-items div {
-                padding: 10px;
-                cursor: pointer;
-                background-color: lightgray;
-                /*#fff*/
-                border-bottom: 1px solid black;
-                /*#d4d4d4*/
-            }
+		input {
+			border: 1px solid transparent;
+			background-color: #f1f1f1;
+			padding: 10px;
+			font-size: 16px;
+		}
 
-                .autocomplete-items div:hover {
-                    /*when hovering an item:*/
-                    background-color: #e9e9e9;
-                }
+			input[type=text] {
+				background-color: #f1f1f1;
+				width: 100%;
+			}
 
-        .autocomplete-active {
-            /*when navigating through the items using the arrow keys:*/
-            background-color: DodgerBlue !important;
-            color: #ffffff;
-        }
-    </style>
-    <!-->
+			input[type=submit] {
+				background-color: DodgerBlue;
+				color: #fff;
+			}
+
+		.autocomplete-items {
+			position: absolute;
+			border: 1px solid #d4d4d4;
+			border-bottom: none;
+			border-top: none;
+			z-index: 99;
+			/*position the autocomplete items to be the same width as the container:*/
+			top: 100%;
+			left: 0;
+			right: 0;
+		}
+
+			.autocomplete-items div {
+				padding: 10px;
+				cursor: pointer;
+				background-color: lightgray;
+				/*#fff*/
+				border-bottom: 1px solid black;
+				/*#d4d4d4*/
+			}
+
+				.autocomplete-items div:hover {
+					/*when hovering an item:*/
+					background-color: #e9e9e9;
+				}
+
+		.autocomplete-active {
+			/*when navigating through the items using the arrow keys:*/
+			background-color: DodgerBlue !important;
+			color: #ffffff;
+		}
+	</style>
+	<!-->
 </head>
 <body>
-    <nav class="navbar nav-inverse">
+    <nav class="navbar nav-inverse" id="dropdownbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -185,9 +205,9 @@
 
 	<div class="search-container">
 		<!--action="http://samfordmaps.azurewebsites.net/index.html"-->
-		<form autocomplete="off" id="searchform" onsubmit="store()" action="http://localhost:56477/testmap5.html">
+		<form autocomplete="off" id="searchform" onsubmit="store()" action="http://samfordmaps.azurewebsites.net/routing.html">
 			<div class="autocomplete" style="width:300px;">
-				<input id="searchbar" type="text" placeholder="Search.." name="search">
+				<input id="searchbar" type="text" placeholder="Search.." name="search"> <!-- was 75% width -->
 			</div>
 			<button type="submit"><i class="fa fa-search"></i></button>
 		</form>
@@ -225,7 +245,7 @@
 	<!--margin-left:500px;-->
 	<!--padding: 8px 16px; border - bottom: 1px solid black;"> ';-->
 	<script type="text/javascript">
-		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://localhost:56477/testmap5.html">';
+		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samfordmaps.azurewebsites.net/routing.html">';
 		str += '<input id="coordshidden" name="coords" value="" type="hidden">';
 		var buildingi = 0;
 		names.forEach(function (name) {
