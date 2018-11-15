@@ -21,7 +21,7 @@ nav {
 }
 
 .icon-bar{
-    background-color: white;
+    background-color: black; /* was white */
 }
 /*
 nav p {
