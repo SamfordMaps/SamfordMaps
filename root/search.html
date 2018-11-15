@@ -182,66 +182,71 @@
             </div>
         </div>
     </nav>
-    
 
-    <div class="search-container">
-        <!--action="http://samfordmaps.azurewebsites.net/index.html"-->
-        <form autocomplete="off" id="searchform" onsubmit="store()" action="http://samfordmaps.azurewebsites.net/index.html">
-            <div class="autocomplete" style="width:300px;">
-                <input id="searchbar" type="text" placeholder="Search.." name="search">
-            </div>
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+	<div class="search-container">
+		<!--action="http://samfordmaps.azurewebsites.net/index.html"-->
+		<form autocomplete="off" id="searchform" onsubmit="store()" action="http://localhost:56477/testmap5.html">
+			<div class="autocomplete" style="width:300px;">
+				<input id="searchbar" type="text" placeholder="Search.." name="search">
+			</div>
+			<button type="submit"><i class="fa fa-search"></i></button>
+		</form>
+	</div>
 
-    <script type="text/javascript">
-        function store() {
-            var inputName = document.getElementById("searchbar");
-            //alert(inputName.value);
-            var inputCoords = ["-86.7936", "33.4647"] /****query to get coords*** */
-            prompt("Please copy and paste these into the target location box on the map screen, divided by commas : \n", inputCoords.join("\n"));
-            //alert("Please copy and paste these into the target location box on the map screen, divided by commas : \n" + inputCoords.join("\n"));
-            localStorage.setItem("searchbar", inputName.value);
-        }
-    </script>
+	<script type="text/javascript">
+		function store() {
+			var inputName = document.getElementById("searchbar");
+			var index = names.indexOf(inputName);
+			var inputCoords = setCoords(index);
+			prompt(inputCoords.value);
+		}
+	</script>
 
-    <script>
-        autocomplete(document.getElementById("searchbar"), names);
-    </script>
+	<!--//var inputCoords = ["-86.7936", "33.4647"] /****query to get coords*** */
+	//prompt("Please copy and paste these into the target location box on the map screen, divided by commas : \n", inputCoords.join("\n"));
+	////alert("Please copy and paste these into the target location box on the map screen, divided by commas : \n" + inputCoords.join("\n"));
+	//localStorage.setItem("searchbar", inputName.value);-->
 
-    <div id="info">
-        <p style="color:white;font-size:20px">
-            <br />
-            <br />
-            Use the above bar to search, or choose from the list below!<br />
-            <br />
-            <br />
-        </p>
-    </div>
+	<script>
+		autocomplete(document.getElementById("searchbar"), names);
+	</script>
 
-    <div id="nameContainer" style="background-color:white;list-style-type:none;"></div>
-    <!--margin-left:500px;-->
-    <!--padding: 8px 16px; border - bottom: 1px solid black;"> ';-->
-    <script type="text/javascript">
-        var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samfordmaps.azurewebsites.net/index.html">';
-        names.forEach(function (name) {
-            str += '<input type="submit" id="item" style="font-size:20px; background-color: white; border: 1px solid black; color: black; padding: 10px 24px; cursor: pointer; width: 100%; display: block;" value="' + name + '"/>';
-        });
-        str += '</form> </ul> ';
-        document.getElementById("nameContainer").innerHTML = str;
-    </script>
+	<div id="info">
+		<p style="color:white;font-size:20px">
+			<br />
+			<br />
+			Use the above bar to search, or choose from the list below!<br />
+			<br />
+			<br />
+		</p>
+	</div>
 
-    <!--<ul id="display" style="width:500px;height:500px;background-color:white;margin-left:500px;list-style-type:none">
-        <li>-->
-    <!--<script>
-        var parsed = "";
-        var myObject = names;
-        for (i = 0; i < myObject.length; i++) {
-            parsed += myObject[i] + "\n";
-        }
-        $("#display").val(parsed);
-    </script>-->
-    <!--</li>
-    </ul>-->
+	<div id="nameContainer" style="background-color:white;list-style-type:none;"></div>
+	<!--margin-left:500px;-->
+	<!--padding: 8px 16px; border - bottom: 1px solid black;"> ';-->
+	<script type="text/javascript">
+		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://localhost:56477/testmap5.html">';
+		str += '<input id="coordshidden" name="coords" value="" type="hidden">';
+		var buildingi = 0;
+		names.forEach(function (name) {
+			str += '<input onclick="setCoords(' + buildingi + ');" name="building" type="submit" id="item" style="font-size:20px; background-color: white; border: 1px solid black; color: black; padding: 10px 24px; cursor: pointer; width: 100%; display: block;" value="' + name + '"/>';
+			buildingi++;
+		});
+		str += '</form> </ul> ';
+		document.getElementById("nameContainer").innerHTML = str;
+	</script>
+
+	<!--<ul id="display" style="width:500px;height:500px;background-color:white;margin-left:500px;list-style-type:none">
+		<li>-->
+	<!--<script>
+		var parsed = "";
+		var myObject = names;
+		for (i = 0; i < myObject.length; i++) {
+			parsed += myObject[i] + "\n";
+		}
+		$("#display").val(parsed);
+	</script>-->
+	<!--</li>
+	</ul>-->
 </body>
 </html>
