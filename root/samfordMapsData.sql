@@ -1,12 +1,14 @@
 --
--- File generated with SQLiteStudio v3.1.1 on Mon Oct 1 11:10:32 2018
+-- File generated with SQLiteStudio v3.1.1 on Fri Nov 16 17:51:18 2018
 --
 -- Text encoding used: System
 --
---PRAGMA foreign_keys = off;
+PRAGMA foreign_keys = off;
 BEGIN TRANSACTION;
 
 -- Table: locations
+DROP TABLE IF EXISTS locations;
+
 CREATE TABLE locations (
     locationID  INT (10)       PRIMARY KEY
                                UNIQUE
@@ -32,7 +34,7 @@ INSERT INTO locations (
                           'Benjamin F. Harrison Theatre',
                           'Harrison Theatre',
                           'HT',
-                          NULL,
+                          '33.46390362885873,-86.79278612136841',
                           NULL
                       );
 
@@ -49,7 +51,7 @@ INSERT INTO locations (
                           'Bolding Studio',
                           'Bolding Studio',
                           'BS',
-                          NULL,
+                          '33.46377161104942,-86.79269224405289',
                           NULL
                       );
 
@@ -66,7 +68,7 @@ INSERT INTO locations (
                           'Samford Art Gallery',
                           'Art Gallery',
                           'AG',
-                          NULL,
+                          '33.46377161104942,-86.79269224405289',
                           NULL
                       );
 
@@ -83,7 +85,7 @@ INSERT INTO locations (
                           'Andrew Gerow Hodges Chapel',
                           'Hodges Chapel',
                           'HODGE',
-                          NULL,
+                          '33.46405354714418,-86.7938107252121',
                           NULL
                       );
 
@@ -101,7 +103,7 @@ INSERT INTO locations (
 Parking Lot',
                           'Wright Center Parking',
                           'WCP',
-                          NULL,
+                          '33.46269793545172,-86.79373069361998',
                           NULL
                       );
 
@@ -118,7 +120,7 @@ INSERT INTO locations (
                           'Leo E. Bashinsky Press Tower',
                           'Press Tower',
                           'BPT',
-                          NULL,
+                          '33.463142696101066,-86.7957561097084',
                           NULL
                       );
 
@@ -135,7 +137,7 @@ INSERT INTO locations (
                           'Barbara Drummond Thorne Hall',
                           'Thorne Hall',
                           'THORNE',
-                          NULL,
+                          '33.461611135869774,-86.79647167522234',
                           NULL
                       );
 
@@ -152,7 +154,7 @@ INSERT INTO locations (
                           'West Village Parking',
                           'West Village Parking',
                           'WVP',
-                          NULL,
+                          '33.46129876455142,-86.79599022059136',
                           NULL
                       );
 
@@ -169,7 +171,7 @@ INSERT INTO locations (
                           'Carl E. Miller Jr. Press Box',
                           'Press Box',
                           'PRSBOX',
-                          NULL,
+                          '33.46280496604857,-86.79677188396454',
                           NULL
                       );
 
@@ -186,7 +188,7 @@ INSERT INTO locations (
                           'Darwin E. Hardison Tennis Courts',
                           'Tennis Courts',
                           'TENCOUR',
-                          NULL,
+                          '33.46267697432298,-86.80056023637007',
                           NULL
                       );
 
@@ -203,7 +205,7 @@ INSERT INTO locations (
                           'Pat Murphy Courington Tennis Pavilion',
                           'Tennis Pavilion',
                           'TENPAV',
-                          NULL,
+                          '33.46280049081516,-86.79975986480713',
                           NULL
                       );
 
@@ -220,7 +222,7 @@ INSERT INTO locations (
                           'Alpha Omicron Pi',
                           'Alpha Omicron Pi',
                           'AOP',
-                          NULL,
+                          '33.46352503614102,-86.79982298976745',
                           NULL
                       );
 
@@ -237,7 +239,7 @@ INSERT INTO locations (
                           'Mountain View',
                           'Mountain View',
                           'MV',
-                          NULL,
+                          '33.4636771926754,-86.79916102077902',
                           NULL
                       );
 
@@ -254,7 +256,7 @@ INSERT INTO locations (
                           'Residence Hall',
                           'Residence Hall',
                           'RH',
-                          NULL,
+                          '33.46394515515174,-86.80011575688678',
                           NULL
                       );
 
@@ -271,7 +273,7 @@ INSERT INTO locations (
                           'Sigma Chi',
                           'Sigma Chi',
                           'SC',
-                          NULL,
+                          '33.46395410550011,-86.7993722483514',
                           NULL
                       );
 
@@ -288,7 +290,7 @@ INSERT INTO locations (
                           'Phi Mu',
                           'Phi Mu',
                           'PM',
-                          NULL,
+                          '33.46411576001542,-86.7988509578098',
                           NULL
                       );
 
@@ -305,7 +307,7 @@ INSERT INTO locations (
                           'Chi Omega',
                           'Chi Omega',
                           'CHIO',
-                          NULL,
+                          '33.46419183779753,-86.79831237043607',
                           NULL
                       );
 
@@ -322,7 +324,7 @@ INSERT INTO locations (
                           'Alpha Delta Pi',
                           'Alpha Delta Pi',
                           'ADP',
-                          NULL,
+                          '33.46449197862289,-86.79847619466096',
                           NULL
                       );
 
@@ -339,7 +341,7 @@ INSERT INTO locations (
                           'Zeta Tau Alpha',
                           'Zeta Tau Alpha',
                           'ZTA',
-                          NULL,
+                          '33.46451882949592,-86.79801807355767',
                           NULL
                       );
 
@@ -356,7 +358,7 @@ INSERT INTO locations (
                           'Tri Delta',
                           'Tri Delta',
                           'TD',
-                          NULL,
+                          '33.46448316228719,-86.79764306623838',
                           NULL
                       );
 
@@ -373,7 +375,7 @@ INSERT INTO locations (
                           'Thomas E. and Marla H. Corts Arena',
                           'Corts Arena',
                           'CA',
-                          NULL,
+                          '33.46382978841389,-86.79717421531677',
                           NULL
                       );
 
@@ -390,7 +392,7 @@ INSERT INTO locations (
                           'Fitness and Wellness Center',
                           'Fitness Center',
                           'FC',
-                          NULL,
+                          '33.46382978841389,-86.79717421531677',
                           NULL
                       );
 
@@ -407,7 +409,7 @@ INSERT INTO locations (
                           'Public Safety',
                           'Public Safety',
                           'PS',
-                          NULL,
+                          '33.4644618277613,-86.79568098990762',
                           NULL
                       );
 
@@ -424,7 +426,7 @@ INSERT INTO locations (
                           'University Health Services',
                           'Health Services',
                           'HS',
-                          NULL,
+                          '33.464409153281274,-86.79540904385897',
                           NULL
                       );
 
@@ -441,7 +443,7 @@ INSERT INTO locations (
                           'Upper Shop Lot',
                           'Upper Shop Parking',
                           'USP',
-                          NULL,
+                          '33.46625794918875,-86.79562212963486',
                           NULL
                       );
 
@@ -458,7 +460,7 @@ INSERT INTO locations (
                           'Facilities Management',
                           'Facilities',
                           'FACL',
-                          NULL,
+                          '33.46686390760931,-86.79439008235931',
                           NULL
                       );
 
@@ -475,7 +477,7 @@ INSERT INTO locations (
                           'Dwight Hall',
                           'Dwight',
                           'DWIGHT',
-                          NULL,
+                          '33.46579526803521,-86.78771365919431',
                           NULL
                       );
 
@@ -492,7 +494,7 @@ INSERT INTO locations (
                           'Lucille Hall',
                           'Lucille',
                           'LUCILLE',
-                          NULL,
+                          '33.46538042427862,-86.78759254655262',
                           NULL
                       );
 
@@ -509,7 +511,7 @@ INSERT INTO locations (
                           'Treetop Hall',
                           'Treetop',
                           'TREE',
-                          NULL,
+                          '33.46475390796881,-86.78766442955776',
                           NULL
                       );
 
@@ -526,7 +528,7 @@ INSERT INTO locations (
                           'Evergreen Hall',
                           'Evergreen',
                           'EVRGRN',
-                          NULL,
+                          '33.46659596030124,-86.78878872077627',
                           NULL
                       );
 
@@ -543,7 +545,7 @@ INSERT INTO locations (
                           'Rosa Hall',
                           'Rosa',
                           'ROSA',
-                          NULL,
+                          '33.46667294866356,-86.7874783466608',
                           NULL
                       );
 
@@ -560,7 +562,7 @@ INSERT INTO locations (
                           'Ethel Hall',
                           'Ethel',
                           'ETH',
-                          NULL,
+                          '33.46697277539569,-86.78769506895276',
                           NULL
                       );
 
@@ -577,7 +579,7 @@ INSERT INTO locations (
                           'Marvin Hall',
                           'Marvin',
                           'MARV',
-                          NULL,
+                          '33.46698172543145,-86.78725733224508',
                           NULL
                       );
 
@@ -594,7 +596,7 @@ INSERT INTO locations (
                           'Conservatory',
                           'Conservatory',
                           'CONS',
-                          NULL,
+                          '33.465468243497924,-86.78928546313551',
                           NULL
                       );
 
@@ -611,7 +613,7 @@ INSERT INTO locations (
                           'Boyd E. Christenberry Planetarium',
                           'Planetarium',
                           'PLANT',
-                          NULL,
+                          '33.466434304266215,-86.78994297981262',
                           NULL
                       );
 
@@ -628,7 +630,7 @@ INSERT INTO locations (
                           'Ingalls Hall and Russell Hall Parking',
                           'Ingalls and Russell Parking',
                           'IRP',
-                          NULL,
+                          '33.464644267416865,-86.79000198841095',
                           NULL
                       );
 
@@ -645,7 +647,7 @@ INSERT INTO locations (
                           'Dining Hall',
                           'Dining Hall',
                           'DH',
-                          NULL,
+                          '33.46510321470157,-86.79313832422895',
                           'Cafeteria'
                       );
 
@@ -662,7 +664,7 @@ INSERT INTO locations (
                           'Bookstore',
                           'Bookstore',
                           'BKSTR',
-                          NULL,
+                          '33.46520524723475,-86.79301708818502',
                           'Campus Bookstore'
                       );
 
@@ -679,7 +681,7 @@ INSERT INTO locations (
                           'The Hub',
                           'Hub',
                           'HUB',
-                          NULL,
+                          '33.46523120284471,-86.79352885346862',
                           'Information Center'
                       );
 
@@ -696,7 +698,7 @@ INSERT INTO locations (
                           'Alpine Tower',
                           'Alpine',
                           'AT',
-                          NULL,
+                          '33.46312717439506,-86.78780847478947',
                           NULL
                       );
 
@@ -713,7 +715,7 @@ INSERT INTO locations (
                           'Track and Soccer Stadium Parking',
                           'Soccer Stadium Parking',
                           'SSP',
-                          NULL,
+                          '33.45837044040774,-86.79502890694357',
                           'Parking for Soccer Stadium'
                       );
 
@@ -730,7 +732,7 @@ INSERT INTO locations (
                           'College of Health Sciences 2',
                           'CHS2',
                           'CHS2',
-                          NULL,
+                          '33.46717846212359,-86.78591587151857',
                           'Health Professions, Nursing, Pharmacy, Public Health'
                       );
 
@@ -747,7 +749,7 @@ INSERT INTO locations (
                           'College of Health Sciences 1',
                           'CHS1',
                           'CHS1',
-                          NULL,
+                          '33.46717846212359,-86.78591587151857',
                           'Health Professions, Nursing, Pharmacy, Public Health'
                       );
 
@@ -764,7 +766,7 @@ INSERT INTO locations (
                           'College of Health Sciences Main Campus Access',
                           'CHS Access',
                           'CHSA',
-                          NULL,
+                          '33.46534579671678,-86.78642956705204',
                           'CHS Main Access'
                       );
 
@@ -781,7 +783,7 @@ INSERT INTO locations (
                           'College of Health Sciences Parking',
                           'CHS Parking',
                           'CHSP',
-                          NULL,
+                          '33.46649988769511,-86.78635219219166',
                           'Parking for CHS'
                       );
 
@@ -798,7 +800,7 @@ INSERT INTO locations (
                           'College of Health Sciences',
                           'CHS',
                           'CHS',
-                          NULL,
+                          '33.46717846212359,-86.78591587151857',
                           'Health Professions, Nursing, Pharmacy, Public Health'
                       );
 
@@ -815,7 +817,7 @@ INSERT INTO locations (
                           'College of Health Sciences Gate Entrance',
                           'CHS Gate',
                           'CHSG',
-                          NULL,
+                          '33.46531235821701,-86.78577908958994',
                           'CHS Entrance Gate'
                       );
 
@@ -832,7 +834,7 @@ INSERT INTO locations (
                           'Presidents Home',
                           'Presidents Home',
                           'PRES',
-                          NULL,
+                          '33.46207593045414,-86.78713258794664',
                           'Home of the President'
                       );
 
@@ -849,7 +851,7 @@ INSERT INTO locations (
                           'Academy of the Arts',
                           'Arts Academy',
                           'AOTA',
-                          NULL,
+                          '33.46444064838358,-86.78367465734482',
                           'Arts Academy'
                       );
 
@@ -866,7 +868,7 @@ INSERT INTO locations (
                           'Track and Soccer Stadium',
                           'Soccer Stadium',
                           'TSS',
-                          NULL,
+                          '33.45934554169204,-86.79381608963013',
                           'Soccer Stadium'
                       );
 
@@ -884,7 +886,7 @@ INSERT INTO locations (
 ',
                           'Intramural',
                           'IRC',
-                          NULL,
+                          '33.46396404372139,-86.78591966629028',
                           'Complex for Intramurals and Recreation'
                       );
 
@@ -901,7 +903,7 @@ INSERT INTO locations (
                           'Centennial Walk',
                           'University Quadrangle',
                           'CW',
-                          NULL,
+                          '33.46509916049925,-86.79168138932039',
                           'Main Stairs and Quad'
                       );
 
@@ -918,7 +920,7 @@ INSERT INTO locations (
                           'Ralph W. Beeson University Center',
                           'University Center',
                           'UC',
-                          NULL,
+                          '33.465270784519134,-86.79307579994202',
                           'Dining Hall, Food Court, and Hub'
                       );
 
@@ -935,7 +937,7 @@ INSERT INTO locations (
                           'Dwight M. Beeson Hall',
                           'Dwight Hall',
                           'DBH',
-                          NULL,
+                          '33.465730824207355,-86.79267454186629',
                           NULL
                       );
 
@@ -952,7 +954,7 @@ INSERT INTO locations (
                           'Ben Brown Plaza',
                           'Ben Brown',
                           'BB',
-                          NULL,
+                          '33.46542025293703,-86.79254794140434',
                           'Plaza near University Center'
                       );
 
@@ -969,7 +971,7 @@ INSERT INTO locations (
                           'Harwell G. Davis University Library',
                           'Library',
                           'UL',
-                          NULL,
+                          '33.465798845416984,-86.79207801818848',
                           'Main Campus Library'
                       );
 
@@ -986,7 +988,7 @@ INSERT INTO locations (
                           'Lucille Stewart Beeson Law Library',
                           'Law Library',
                           'LSBLL',
-                          NULL,
+                          '33.46667595640871,-86.79134845733643',
                           'Law Library'
                       );
 
@@ -1003,7 +1005,7 @@ INSERT INTO locations (
                           'Memory Leake Robinson Hall (Law)',
                           'Robinson',
                           'ROBH',
-                          NULL,
+                          '33.466181016304226,-86.79168427010154',
                           'Law'
                       );
 
@@ -1020,7 +1022,7 @@ INSERT INTO locations (
                           'Martha F. and Albert P. Brewer Plaza',
                           'Plaza',
                           'PLAZA',
-                          NULL,
+                          '33.466102086962785,-86.79085593932217',
                           'Plaza near Brooks'
                       );
 
@@ -1037,7 +1039,7 @@ INSERT INTO locations (
                           'Brooks Hall (Arts and Sciences)',
                           'Brooks',
                           'BROOK',
-                          NULL,
+                          '33.466102086962785,-86.79085593932217',
                           'English'
                       );
 
@@ -1054,7 +1056,7 @@ INSERT INTO locations (
                           'Percy Pratt Burns Hall',
                           'Burns',
                           'BURNS',
-                          NULL,
+                          '33.46588101855856,-86.79038065168828',
                           NULL
                       );
 
@@ -1071,7 +1073,7 @@ INSERT INTO locations (
                           'A. Hamilton Reid Chapel',
                           'Reid',
                           'REID',
-                          NULL,
+                          '33.46566084459403,-86.79027980003997',
                           'Chapel for Campus Worship'
                       );
 
@@ -1088,7 +1090,7 @@ INSERT INTO locations (
                           'James Horton Chapman Hall',
                           'Chapman',
                           'CHAPM',
-                          NULL,
+                          '33.46546407965128,-86.79012278516973',
                           'Languages'
                       );
 
@@ -1105,7 +1107,7 @@ INSERT INTO locations (
                           'Thomas D. Russell Hall',
                           'Russell',
                           'RUSSL',
-                          NULL,
+                          '33.4650149019614,-86.79029558383121',
                           'Computer Science and Mathematics'
                       );
 
@@ -1120,10 +1122,10 @@ INSERT INTO locations (
                       VALUES (
                           1000000041,
                           'Robert I. Ingalls Sr. Hall',
-                          'Ingalls',
+                          'Admissions',
                           'INGAL',
-                          NULL,
-                          'Pharmacy'
+                          '33.464647847541144,-86.7906038765068',
+                          'Admissions Hall'
                       );
 
 INSERT INTO locations (
@@ -1139,7 +1141,7 @@ INSERT INTO locations (
                           'William Self Propst Hall',
                           'Propst Hall',
                           'PH',
-                          NULL,
+                          '33.466009173861764,-86.78952991962433',
                           'Science'
                       );
 
@@ -1156,7 +1158,7 @@ INSERT INTO locations (
                           'Beeson Woods Residence Halls',
                           'Beeson Woods',
                           'BW',
-                          NULL,
+                          '33.466489962081496,-86.78842778662278',
                           'Beeson Woods Dorms'
                       );
 
@@ -1173,7 +1175,7 @@ INSERT INTO locations (
                           'Northeast Parking Deck',
                           'Northeast Parking',
                           'NRTHP',
-                          NULL,
+                          '33.467374058813576,-86.79191172122955',
                           'Parking for Northeast'
                       );
 
@@ -1190,7 +1192,7 @@ INSERT INTO locations (
                           'Cooney Hall (Business)',
                           'Cooney',
                           'BSOB',
-                          NULL,
+                          '33.466698715696765,-86.79261827795534',
                           'Business'
                       );
 
@@ -1207,7 +1209,7 @@ INSERT INTO locations (
                           'North Parking Deck',
                           'North Parking',
                           'NP',
-                          NULL,
+                          '33.46686390760931,-86.79439008235931',
                           'Parking for North side'
                       );
 
@@ -1224,7 +1226,7 @@ INSERT INTO locations (
                           'Mamie Mell Smith Residence Hall',
                           'Smith',
                           'SMTH',
-                          NULL,
+                          '33.46647575138308,-86.79343346301607',
                           'Smith Dorm'
                       );
 
@@ -1241,7 +1243,7 @@ INSERT INTO locations (
                           'Lena Vail Davis Residence Hall',
                           'Vail',
                           'VAIL',
-                          NULL,
+                          '33.466060573753815,-86.79441321242456',
                           'Vail Dorm'
                       );
 
@@ -1258,7 +1260,7 @@ INSERT INTO locations (
                           'Art Lofts',
                           'Art Lofts',
                           'LOFT',
-                          NULL,
+                          '33.46639757077925,-86.79601051330377',
                           'Art Lofts'
                       );
 
@@ -1275,7 +1277,7 @@ INSERT INTO locations (
                           'John D. Pittman Hall',
                           'Pittman',
                           'PITTM',
-                          NULL,
+                          '33.46468508624998,-86.79390247330537',
                           'Pittman Dorm'
                       );
 
@@ -1292,7 +1294,7 @@ INSERT INTO locations (
                           'Victory Flag',
                           'Victory Flag',
                           'VF',
-                          NULL,
+                          '33.46491636367203,-86.79470050763547',
                           'Flag of victory near OBB'
                       );
 
@@ -1309,7 +1311,7 @@ INSERT INTO locations (
                           'Orlean Bullard Beeson Hall (Education)',
                           'Orlean Bullard Beeson Hall',
                           'OBB',
-                          NULL,
+                          '33.46517233213153,-86.79531812667847',
                           'Education'
                       );
 
@@ -1326,7 +1328,7 @@ INSERT INTO locations (
                           'Dwight M. and Lucille S. Beeson Center',
                           'Beeson Center',
                           'BC',
-                          NULL,
+                          '33.46507732682388,-86.79599354650225',
                           NULL
                       );
 
@@ -1343,7 +1345,7 @@ INSERT INTO locations (
                           'F. Page Seibert Hall',
                           'Seibert Hall',
                           'SIGYM',
-                          NULL,
+                          '33.4644618277613,-86.79568098990762',
                           'Fitness gymnasiums'
                       );
 
@@ -1360,7 +1362,7 @@ INSERT INTO locations (
                           'Leo E. Bashinsky Field House',
                           'Bashinsky Field House',
                           'BASHN',
-                          NULL,
+                          '33.464223749587646,-86.79624532707726',
                           NULL
                       );
 
@@ -1377,7 +1379,7 @@ INSERT INTO locations (
                           'Bulldog Spirit Plaza',
                           'Spirit Plaza',
                           'SP',
-                          NULL,
+                          '33.46394270217904,-86.79643644476181',
                           'Bulldog Plaza behind Bashinsky Field House'
                       );
 
@@ -1394,7 +1396,7 @@ INSERT INTO locations (
                           'Pete Hanna Center (Athletics)',
                           'Hanna Center',
                           'PHC',
-                          NULL,
+                          '33.46382978841389,-86.79717421531677',
                           'Athletic Center'
                       );
 
@@ -1411,7 +1413,7 @@ INSERT INTO locations (
                           'Theta Alpha House',
                           'Theta Alpha',
                           'TA',
-                          NULL,
+                          '33.46550693689276,-86.79741833612741',
                           'TA House'
                       );
 
@@ -1428,7 +1430,7 @@ INSERT INTO locations (
                           'Air Force ROTC Detachment',
                           'AFROTC Detachment',
                           'AFROTC',
-                          NULL,
+                          '33.464805372247106,-86.79826855659485',
                           'AFROTC Detachment'
                       );
 
@@ -1445,7 +1447,7 @@ INSERT INTO locations (
                           'Pi Kappa Phi House',
                           'Pi Kappa Phi',
                           'PKP',
-                          NULL,
+                          '33.46477061955061,-86.79894840230122',
                           'PKP House'
                       );
 
@@ -1462,7 +1464,7 @@ INSERT INTO locations (
                           'West Campus Residence Halls',
                           'West Campus',
                           'WSTC',
-                          NULL,
+                          '33.4637684457285,-86.79875616823557',
                           'West Campus Dorms'
                       );
 
@@ -1479,7 +1481,7 @@ INSERT INTO locations (
                           'Samford Tennis Center',
                           'Tennis Center',
                           'STC',
-                          NULL,
+                          '33.46280049081516,-86.79975986480713',
                           'Tennis Center'
                       );
 
@@ -1496,7 +1498,7 @@ INSERT INTO locations (
                           'West Parking Deck',
                           'West Parking',
                           'WP',
-                          NULL,
+                          '33.46321221132128,-86.79886937141418',
                           'Parking for West side'
                       );
 
@@ -1513,7 +1515,7 @@ INSERT INTO locations (
                           'Bulldog Softball Field',
                           'Softball Field',
                           'BSF',
-                          NULL,
+                          '33.46275036819891,-86.7982964519615',
                           'Softball Field'
                       );
 
@@ -1530,8 +1532,8 @@ INSERT INTO locations (
                           'J. T. Haywood Field House',
                           'Haywood Field House',
                           'HFH',
-                          NULL,
-                          NULL
+                          '33.46280099906259,-86.79794321507683',
+                          'Field House by the Softball Field'
                       );
 
 INSERT INTO locations (
@@ -1547,7 +1549,7 @@ INSERT INTO locations (
                           'Joe Lee Griffin Baseball Field',
                           'Griffin Field',
                           'GF',
-                          NULL,
+                          '33.46280496604857,-86.79677188396454',
                           'Baseball Field'
                       );
 
@@ -1564,7 +1566,7 @@ INSERT INTO locations (
                           'West Village',
                           'West Village',
                           'WV',
-                          NULL,
+                          '33.461589920014326,-86.79686349220759',
                           'West Village Dorms'
                       );
 
@@ -1581,7 +1583,7 @@ INSERT INTO locations (
                           'South Stadium Parking Lot',
                           'South Stadium Parking',
                           'SSPL',
-                          NULL,
+                          '33.461744329270566,-86.79614424705505',
                           'Parking for the South Stadium'
                       );
 
@@ -1598,8 +1600,8 @@ INSERT INTO locations (
                           'Sullivan-Cooney Family Field House',
                           'Family Field House',
                           'FFH',
-                          NULL,
-                          NULL
+                          '33.4626510894344,-86.79492853317481',
+                          'Field House behind Seibert Stadium'
                       );
 
 INSERT INTO locations (
@@ -1615,7 +1617,7 @@ INSERT INTO locations (
                           'F. Page Seibert Stadium',
                           'Seibert Stadium',
                           'SS',
-                          NULL,
+                          '33.46330171552038,-86.79523229598999',
                           'Sports Stadium'
                       );
 
@@ -1632,7 +1634,7 @@ INSERT INTO locations (
                           'West Gate Entrance',
                           'West Gate',
                           'WG',
-                          NULL,
+                          '33.46179803271047,-86.7941164970398',
                           'West Entrance Gate'
                       );
 
@@ -1649,7 +1651,7 @@ INSERT INTO locations (
                           'Divinity Hall (Divinity)',
                           'Divinity',
                           'DIV',
-                          NULL,
+                          '33.46425269192832,-86.79351031780243',
                           'Religion'
                       );
 
@@ -1666,7 +1668,7 @@ INSERT INTO locations (
                           'Gertha Itasca Earwood Bolding Memorial Garden',
                           'Memorial Garden',
                           'BMG',
-                          NULL,
+                          '33.46414053295722,-86.79285135333322',
                           'Garden near Hodges and Divinity'
                       );
 
@@ -1683,7 +1685,7 @@ INSERT INTO locations (
                           'Bonnie Bolding Swearingen Hall',
                           'Swearingen Hall',
                           'BBS',
-                          NULL,
+                          '33.46377161104942,-86.79269224405289',
                           'Acting'
                       );
 
@@ -1700,7 +1702,7 @@ INSERT INTO locations (
                           'Leslie S. Wright Fine Arts Center',
                           'Wright Center',
                           'WC',
-                          NULL,
+                          '33.46336884360904,-86.79259568452835',
                           'Main Auditorium'
                       );
 
@@ -1717,7 +1719,7 @@ INSERT INTO locations (
                           'John H. Buchanan Hall (Arts)',
                           'Buchanan',
                           'BUCHN',
-                          NULL,
+                          '33.46409667633902,-86.79238535654656',
                           'Music'
                       );
 
@@ -1734,7 +1736,7 @@ INSERT INTO locations (
                           'Hazel P. Boren Courtyard and Garden',
                           'Courtyard',
                           'CG',
-                          NULL,
+                          '33.46436896360675,-86.79324626796097',
                           'Courtyard near Hodges and Divinity with benches'
                       );
 
@@ -1751,7 +1753,7 @@ INSERT INTO locations (
                           'Jane Hollock Brock Recital Hall',
                           'Brock Recital Hall',
                           'BRH',
-                          NULL,
+                          '33.463444922046705,-86.79216921329498',
                           'Stage'
                       );
 
@@ -1768,7 +1770,7 @@ INSERT INTO locations (
                           'Jane Hollock Brock Hall',
                           'Brock Hall',
                           'JHBRK',
-                          NULL,
+                          '33.463444922046705,-86.79216921329498',
                           'Art and Music'
                       );
 
@@ -1783,9 +1785,9 @@ INSERT INTO locations (
                       VALUES (
                           1000000002,
                           'Frank Park Samford Hall',
-                          'Admissions',
+                          'Samford Hall',
                           'SH',
-                          NULL,
+                          '33.46412604486942,-86.79186236917303',
                           'Administration, Bursar, and Financial Aid'
                       );
 
@@ -1802,8 +1804,8 @@ INSERT INTO locations (
                           'Sherman Oak',
                           'Sherman Oak',
                           'SHMO',
-                          NULL,
-                          'Oak tree near Admissions Building'
+                          '33.4645739762939,-86.79192089738558',
+                          'Oak tree near Samford Hall'
                       );
 
 INSERT INTO locations (
@@ -1819,10 +1821,129 @@ INSERT INTO locations (
                           'Main Gate',
                           'Main Gate',
                           'MG',
-                          NULL,
+                          '33.46312270702978,-86.79037481546402',
                           'Main Entrance Gate'
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000106,
+                          'Bulldog Soccer Field',
+                          'Soccer Field',
+                          'SF',
+                          '33.463673156959025,-86.78640246391296',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000108,
+                          'Ralph Hall',
+                          'Ralph',
+                          'RAH',
+                          '33.46679907650857,-86.78824044543774',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000107,
+                          'Orlean Hall',
+                          'Orlean',
+                          'OH',
+                          '33.466405273230826,-86.7879904633611',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000112,
+                          'James Hall',
+                          'James',
+                          'JH',
+                          '33.46537153111395,-86.78828014291696',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000111,
+                          'Luther Hall',
+                          'Luther',
+                          'LH',
+                          '33.46574296368325,-86.78833593266802',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000110,
+                          'Malcolm Hall',
+                          'Malcolm',
+                          'MH',
+                          '33.46615914527365,-86.7884668242715',
+                          NULL
+                      );
+
+INSERT INTO locations (
+                          locationID,
+                          formalName,
+                          commonName,
+                          acronym,
+                          coordinates,
+                          description
+                      )
+                      VALUES (
+                          1000000109,
+                          'Wesley Hall',
+                          'Wesley',
+                          'WH',
+                          '33.46660665013048,-86.78879083492404',
+                          NULL
                       );
 
 
 COMMIT TRANSACTION;
---PRAGMA foreign_keys = on;
+PRAGMA foreign_keys = on;
