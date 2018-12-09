@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="/scripts/snippet-javascript-console.min.js?v=1"></script>
+	<script src="Scripts.js" type="text/javascript"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!--Uses R360/Targomo and LeafletJS-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<!--  Include leaflet javascript and css -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" crossorigin="">
+	<script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet-src.js" crossorigin=""></script>
+	<!--  Include r360.js -->
+	<script src="https://releases.route360.net/r360-js/latest.js"></script>
+
+	<style>
+		html, body {
+			width: 100%;
+			height: 100%;
+			margin: 0;
+			font-family: sans-serif;
+		}
+
+		#map {
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+
+<body>
+	<nav class="navbar navbar-default">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" id="current-page"> Search</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="search.html">Search</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="tours.html">Tours</a></li>
+							<li><a href="games.html">Games</a></li>
+							<li><a href="upcoming.html">Upcoming</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="news.html">News</a></li>
+							<li><a href="safety.html">Safety</a></li>
+							<li><a href="about.html">About</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">Profile</a></li>
+							<li><a href="settings.html">Settings</a></li>
+							<li><a href="login.html">Log In</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<!--  where the map will live  -->
+	<div id="map"></div>
+	<!-- <input id="coords1hidden" name="coords1" value="" type="hidden"> -->
+
+	<script>
+		$(document).ready(function () {
+
+			var target = getQueryVariable("coords").replace("%2C", ",");
+			console.log(target);
+			//var target1 = getCoords();
+			//console.log(target1);
+			var latlons = {
+				map: [33.46312270702978, -86.79037749767303],
+				src1: [33.46508006962999, -86.79165319784619],
+				//src1: [33.46312270702978, -86.79037749767303],
+				trg1: target.split(",")
+				//trg1: [33.465798845416984, -86.79207801818848]
+			};
+
+			// add the map and set the initial center to berlin
+			var map = L.map('map').setView(latlons.map, 16); //13
+			map.attributionControl.addAttribution("ÖPNV Daten © <a href='https://www.vbb.de/de/index.html' target='_blank'>VBB</a>");
+
+			// initialise the base map
+			r360.basemap({ style: 'basic', apikey: 'WORYIR9ZESNU50P21VYY108582863' }).addTo(map);
+
+			// create a target marker icon to be able to distingush source and targets
+			var redIcon = L.icon({
+				iconUrl: 'http://assets.route360.net/leaflet-extras/marker-icon-red.png',
+				shadowUrl: 'http://assets.route360.net/leaflet-extras/marker-shadow.png',
+				iconAnchor: [12, 45],
+				popupAnchor: [0, -35]
+			});
+
+			// create a source and a two target markers and add them to the map
+			var sourceMarker1 = L.marker(latlons.src1, { draggable: true }).addTo(map);
+			var targetMarker1 = L.marker(latlons.trg1, { icon: redIcon, draggable: true }).addTo(map);
+
+			// add a layer in which we will paint the route
+			var routeLayer = L.featureGroup().addTo(map);
+
+			var getRoutes = function () {
+
+				routeLayer.clearLayers();
+
+				// you need to define some options for the polygon service
+				// for more travel options check out the other tutorials
+				var travelOptions = r360.travelOptions();
+				// we only have one source which is the marker we just added
+				travelOptions.addSource(sourceMarker1);
+				// add two targets to the options
+				travelOptions.addTarget(targetMarker1);
+				// set the travel type to transit
+				travelOptions.setTravelType('transit');
+				// set max routing length - max routing time of 30m for free plan
+				travelOptions.setMaxEdgeWeight(1800)
+				// please contact us and request your own key
+				travelOptions.setServiceKey('WORYIR9ZESNU50P21VYY108582863');
+				// set the service url for your area
+				travelOptions.setServiceUrl('https://api.targomo.com/northamerica/');
+
+				// start the service
+				r360.RouteService.getRoutes(travelOptions, function (routes) {
+					// one route for each source and target combination
+					routes.forEach(function (route) {
+
+						r360.LeafletUtil.fadeIn(routeLayer, route, 1000, "travelDistance");
+					});
+				});
+			}
+
+			getRoutes();
+
+			sourceMarker1.on('dragend', getRoutes);
+			targetMarker1.on('dragend', getRoutes);
+		});
+		function getQueryVariable(variable) {
+			var query = window.location.search.substring(1);
+			var vars = query.split("&");
+			for (var i = 0; i < vars.length; i++) {
+				var pair = vars[i].split("=");
+				if (pair[0] == variable) { return pair[1]; }
+			}
+			return (false);
+		}
+	</script>
+</body>
+</html>
