@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -160,49 +160,48 @@
 	<!-->
 </head>
 <body>
-    <nav class="navbar navbar-default navbar-fixed-top" id="dropdownbar">
-        <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                <a class=" navbar-brand"><img src="img/logo.png" style="width:30px; height:30px;" /></a>
-                <a class="navbar-brand" id="current-page"> Search</a>
-            </div>
-            <div class="collapse navbar-collapse" id="myNavbar">
-                <ul class="nav navbar-nav">
-                    <li><a href="index.html">Home</a></li>
-                    <li class="active"><a href="search.html">Search</a></li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="tours.html">Tours</a></li>
-                            <li><a href="games.html">Games</a></li>
-                            <li><a href="upcoming.html">Upcoming</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="news.html">News</a></li>
-                            <li><a href="safety.html">Safety</a></li>
-                            <li><a href="about.html">About</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown">
-                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="profile.html">Profile</a></li>
-                            <li><a href="settings.html">Settings</a></li>
-                            <li><a href="login.html">Log In</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+	<nav class="navbar navbar-default" id="dropdownbar">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" id="current-page"> Search</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav">
+					<li><a href="index.html">Home</a></li>
+					<li class="active"><a href="search.html">Search</a></li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Events<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="tours.html">Tours</a></li>
+							<li><a href="games.html">Games</a></li>
+							<li><a href="upcoming.html">Upcoming</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Information<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="news.html">News</a></li>
+							<li><a href="safety.html">Safety</a></li>
+							<li><a href="about.html">About</a></li>
+						</ul>
+					</li>
+					<li class="dropdown">
+						<a class="dropdown-toggle" data-toggle="dropdown" href="#">Account<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="profile.html">Profile</a></li>
+							<li><a href="settings.html">Settings</a></li>
+							<li><a href="login.html">Log In</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
 
 	<div class="search-container">
 		<!--action="http://samfordmaps.azurewebsites.net/index.html"-->
@@ -236,18 +235,17 @@
 		<p style="color:white;font-size:20px">
 			<br />
 			<br />
-			Use the above bar to search, or choose from the list below!<br />
-			If you wish to create your own route, please click <a href="http://samfordmaps.azurewebsites.net/chooseRouteOne.html">here!</a><br />
-	<br />
-	<br />
-</p>
+			Please choose your ending location!<br />
+			<br />
+			<br />
+		</p>
 	</div>
 
 	<div id="nameContainer" style="background-color:white;list-style-type:none;"></div>
 	<!--margin-left:500px;-->
 	<!--padding: 8px 16px; border - bottom: 1px solid black;"> ';-->
 	<script type="text/javascript">
-		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samfordmaps.azurewebsites.net/routing.html">';
+		var str = '<ul id="items" style="list-style-type: none; padding: 0; border: 1px solid black;"> <form action="http://samfordmaps.azurewebsites.net/secondRouting.html">';
 		str += '<input id="coordshidden" name="coords" value="" type="hidden">';
 		var buildingi = 0;
 		names.forEach(function (name) {
