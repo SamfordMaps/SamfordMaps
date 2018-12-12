@@ -116,10 +116,20 @@
 			var sourceMarker1 = L.marker(latlons.src1, { draggable: true }).addTo(map);
 			var targetMarker1 = L.marker(latlons.trg1, { icon: redIcon, draggable: true }).addTo(map);
 
+			// find users location via geolocation
+			map.locate({setView: true, watch: true});
+
+			function onLocationFound(e) {
+				sourceMarker1.setLatLng(e.latlng);
+				getRoutes();
+			};
+
+			map.on('locationfound' , onLocationFound);
+
 			// add a layer in which we will paint the route
 			var routeLayer = L.featureGroup().addTo(map);
 
-			var getRoutes = function () {
+			function getRoutes() {
 
 				routeLayer.clearLayers();
 
