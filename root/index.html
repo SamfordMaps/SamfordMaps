@@ -91,6 +91,76 @@
 
 			var latlons = {
 				map: [33.46312270702978, -86.79037749767303],
+				src1: [33.465425067334635, -86.79188906741854],
+				//src1: [33.46312270702978, -86.79037749767303],
+				trg1: [33.464365172742404, -86.79323074165421]
+				//trg1: [33.465798845416984, -86.79207801818848]
+			};
+
+			// add the map and set the initial center to berlin
+			var map = L.map('map').setView(latlons.map, 16); //13
+			map.attributionControl.addAttribution("ÖPNV Daten © <a href='https://www.vbb.de/de/index.html' target='_blank'>VBB</a>");
+
+			// initialise the base map
+			r360.basemap({ style: 'basic', apikey: 'WORYIR9ZESNU50P21VYY108582863' }).addTo(map);
+
+			// create a target marker icon to be able to distingush source and targets
+			var redIcon = L.icon({
+				iconUrl: 'http://assets.route360.net/leaflet-extras/marker-icon-red.png',
+				shadowUrl: 'http://assets.route360.net/leaflet-extras/marker-shadow.png',
+				iconAnchor: [12, 45],
+				popupAnchor: [0, -35]
+			});
+
+			// create a source and a two target markers and add them to the map
+			var sourceMarker1 = L.marker(latlons.src1, { draggable: true }).addTo(map);
+			var targetMarker1 = L.marker(latlons.trg1, { icon: redIcon, draggable: true }).addTo(map);
+
+			// add a layer in which we will paint the route
+			var routeLayer = L.featureGroup().addTo(map);
+
+			var getRoutes = function () {
+
+				routeLayer.clearLayers();
+
+				// you need to define some options for the polygon service
+				// for more travel options check out the other tutorials
+				var travelOptions = r360.travelOptions();
+				// we only have one source which is the marker we just added
+				travelOptions.addSource(sourceMarker1);
+				// add two targets to the options
+				travelOptions.addTarget(targetMarker1);
+				// set the travel type to transit
+				travelOptions.setTravelType('transit');
+				// set max routing length - max routing time of 30m for free plan
+				travelOptions.setMaxEdgeWeight(1800)
+				// please contact us and request your own key
+				travelOptions.setServiceKey('WORYIR9ZESNU50P21VYY108582863');
+				// set the service url for your area
+				travelOptions.setServiceUrl('https://api.targomo.com/northamerica/');
+
+				// start the service
+				r360.RouteService.getRoutes(travelOptions, function (routes) {
+					// one route for each source and target combination
+					routes.forEach(function (route) {
+
+						r360.LeafletUtil.fadeIn(routeLayer, route, 1000, "travelDistance");
+					});
+				});
+			}
+
+			getRoutes();
+
+			sourceMarker1.on('dragend', getRoutes);
+			targetMarker1.on('dragend', getRoutes);
+		});
+	</script>
+
+	<!--<script>
+		$(document).ready(function () {
+
+			var latlons = {
+				map: [33.46312270702978, -86.79037749767303],
 				src1: [33.46508006962999, -86.79165319784619],
 				//src1: [33.46312270702978, -86.79037749767303],
 				//trg1: [33.465798845416984, -86.79207801818848]
@@ -132,6 +202,6 @@
 
 			sourceMarker1.on('dragend', getRoutes);
 		});
-	</script>
+	</script>-->
 </body>
 </html>
