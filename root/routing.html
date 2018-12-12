@@ -98,7 +98,7 @@
 
 			// add the map and set the initial center to berlin
 			var map = L.map('map').setView(latlons.map, 16); //13
-			map.attributionControl.addAttribution("ÖPNV Daten © <a href='https://www.vbb.de/de/index.html' target='_blank'>VBB</a>");
+			map.attributionControl.addAttribution("ï¿½PNV Daten ï¿½ <a href='https://www.vbb.de/de/index.html' target='_blank'>VBB</a>");
 
 			// initialise the base map
 			r360.basemap({ style: 'basic', apikey: 'WORYIR9ZESNU50P21VYY108582863' }).addTo(map);
@@ -114,6 +114,16 @@
 			// create a source and a two target markers and add them to the map
 			var sourceMarker1 = L.marker(latlons.src1, { draggable: true }).addTo(map);
 			var targetMarker1 = L.marker(latlons.trg1, { icon: redIcon, draggable: true }).addTo(map);
+
+			// find users location via geolocation
+			function onLocationFound(e) {
+				sourceMarker1.setLatLng(e.latlng);
+				getRoutes();
+			};
+
+			map.locate({setView: true, watch: true});
+
+			map.on('locationfound' , onLocationFound);
 
 			// add a layer in which we will paint the route
 			var routeLayer = L.featureGroup().addTo(map);
